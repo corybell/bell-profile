@@ -1,0 +1,5 @@
+
+[build]
+  command = "gatsby build"
+  functions = "lambda/functions" #  netlify-lambda reads this
+  publish = "public"
