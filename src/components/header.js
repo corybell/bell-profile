@@ -2,16 +2,10 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from 'styled-components'
+import { Container } from './Core'
 
 const Nav = styled.header`
-  background: rebeccapurple;
   margin-bottom: 2rem;
-`
-
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 2rem;
 `
 
 const Title = styled.h1`
@@ -21,7 +15,6 @@ const Title = styled.h1`
 export const GatsbyLink = styled(Link)`
   outline: none;
   text-decoration: none;
-  color: white;
 `
 
 const Header = ({ siteTitle }) => (
