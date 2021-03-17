@@ -5,10 +5,10 @@ import styled from 'styled-components'
 import { Container } from './Core'
 
 const Nav = styled.header`
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
 `
 
-const Title = styled.h1`
+const Title = styled.h3`
   margin: 0;
 `
 
