@@ -6,7 +6,7 @@ import { GatsbyLink } from './Core'
 import { color, breakpoints } from '../services/theme'
 
 const Nav = styled.header`
-  margin: 0;
+  margin: 0 auto;
   max-width: 960px;
   padding: 0 2rem;
 `
