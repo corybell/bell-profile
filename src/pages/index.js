@@ -1,14 +1,14 @@
 import * as React from "react"
 import styled from 'styled-components'
 import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/Layout"
+import Layout from "../components/PageLayout"
 import SEO from "../components/Seo"
-import { color } from '../services/theme'
+import { color, spacing } from '../services/theme'
 
 const Hero = styled.div`
-  margin-bottom: 1.45rem;
+  margin-bottom: ${spacing[6]};
   background-color: ${color.accent};
-  padding: 1rem;
+  padding: ${spacing[4]};
   width: 100%
 `
 

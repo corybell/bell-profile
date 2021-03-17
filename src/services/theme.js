@@ -13,18 +13,22 @@ export const breakpoints = {
 }
 
 export const maxWidth = {
-  none: 'none',
-  xs: '20rem',
-  sm: '24rem',
-  md: '28rem',
-  lg: '32rem',
-  xl: '36rem',
-  xl2: '42rem',
-  xl3: '48rem',
-  xl4: '56rem',
-  full: '100%',
-  wrapper: '42rem',
+  container: '60rem' // 960px
 }
+
+// export const maxWidth = {
+//   none: 'none',
+//   xs: '20rem',
+//   sm: '24rem',
+//   md: '28rem',
+//   lg: '32rem',
+//   xl: '36rem',
+//   xl2: '42rem',
+//   xl3: '48rem',
+//   xl4: '56rem',
+//   full: '100%',
+//   wrapper: '42rem',
+// }
 
 export const spacing = {
   px: '1px',

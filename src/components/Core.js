@@ -1,10 +1,11 @@
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { maxWidth, spacing } from '../services/theme'
 
 export const Container = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 2rem;
+  max-width: ${maxWidth.container};
+  padding: ${spacing[8]};
 `
 
 export const FlexBox = styled.div`
