@@ -59,7 +59,7 @@ const NavLink = styled(GatsbyLink)`
   display: inline-block;
   position: relative;
   color: ${color.accent};
-  padding-bottom: ${spacing[1]};
+  padding-bottom: ${spacing[3]};
   margin-left: ${spacing[8]};
   transition: all .2s ease-out;
   will-change: transform, color;
