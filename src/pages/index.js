@@ -8,9 +8,13 @@ import { color, spacing } from '../services/theme'
 const Hero = styled.div`
   margin-bottom: ${spacing[6]};
   background-color: ${color.accent};
-  padding: ${spacing[4]};
+  padding: ${spacing[20]};
   width: 100%
 `
+
+const desc = `I'm a full-stack developer located in St. Paul, Minnesota offering web development consulting
+  and freelance services. Check out my Github projects for code samples or download my resume below for a 
+  full client list.`
 
 const IndexPage = () => (
   <Layout>
@@ -25,8 +29,7 @@ const IndexPage = () => (
     </Hero>
       
     <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <p>{desc}</p>
   </Layout>
 )
 
