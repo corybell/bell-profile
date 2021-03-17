@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
+import { color } from '../services/theme'
 
 const Hero = styled.div`
   margin-bottom: 1.45rem;
-  background-color: #34414D;
+  background-color: ${color.accent};
   padding: 1rem;
   width: 100%
 `
