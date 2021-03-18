@@ -7,10 +7,10 @@ import { color, spacing, fontSize, breakpoints, fontWeight } from '../services/t
 import { FlexBox } from '../components/Core'
 
 const ImageContainer = styled.div`
-  height: 480px;
+  height: 496px;
   min-height: 496px;
+  width: 376px;
   min-width: 376px;
-  width: 400px;
   background-color: ${color.accent};
   @media(max-width: ${breakpoints.phone}) {
     display: none
@@ -28,13 +28,15 @@ const TextContainer = styled.div`
 `
 
 const ResumeButton = styled.a`
+  width: 17rem;
+  height: 4rem;
   color: #000;
   font-size: ${fontSize[1]};
-  font-weight: ${fontWeight.black};
+  font-weight: ${fontWeight.medium};
   letter-spacing: 2px;
   border: 5px solid ${color.primary};
   display: block;
-  padding: 2rem;
+  padding-top: 1rem;
   text-align: center;
   text-transform: uppercase;
   transition: background-color 300ms ease-in-out, border-color 400ms ease-in-out;
@@ -42,6 +44,10 @@ const ResumeButton = styled.a`
     color: white;
     background-color: ${color.primary};
   }
+`
+
+const ButtonContainer = styled.div`
+  margin: 0 auto;
 `
 
 const greeting = 'Hi people'
@@ -66,7 +72,9 @@ const IndexPage = () => (
         <p><h1>{greeting}</h1></p>
         <p>{p1}</p>
         <p>{p2}</p>
-        <ResumeButton href="resume.pdf" target="_blank">Download resume</ResumeButton>
+        <ButtonContainer>
+          <ResumeButton href="resume.pdf" target="_blank">Download resume</ResumeButton>
+        </ButtonContainer>
       </TextContainer>
     </FlexBox>
   </Layout>

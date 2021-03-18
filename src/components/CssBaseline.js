@@ -182,6 +182,7 @@ const st = `
   a {
     color: ${color.primary};
     text-decoration: none;
+    outline: none;
   }
 
   a:hover,
