@@ -4,14 +4,6 @@ import styled from 'styled-components'
 import { spacing, fontSize, color, fontWeight, breakpoints } from '../services/theme'
 import { GatsbyLink } from '../components/Core'
 
-const FlexBox = styled.div`
-  display: flex;
-  width: 100%;
-  @media(max-width: ${breakpoints.phone}) {
-    flex-direction: column;
-  }
-`
-
 const projects = [
   { text: 'Github', url: 'https://github.com/corybell' },
   { text: 'NPM', url: 'https://www.npmjs.com/~bellistic' },
@@ -20,15 +12,16 @@ const projects = [
 ]
 
 const Root = styled.footer`
-  margin: 8rem 0 2rem 0;
+  margin: ${spacing[32]} 0 ${spacing[2]} 0;
   padding: 0;
 `
 
-const Copyright = styled.small`
-  display: block;
-  margin-top: ${spacing[16]};
-  font-size: ${fontSize[0]};
-  text-align: right;
+const FlexBox = styled.div`
+  display: flex;
+  width: 100%;
+  @media(max-width: ${breakpoints.phone}) {
+    flex-direction: column;
+  }
 `
 
 const LeftContainer = styled.div`
@@ -116,6 +109,13 @@ const ContactButton = styled(GatsbyLink)`
 
 const SocialHeader = styled.h6`
   margin-bottom: ${spacing[6]};
+`
+
+const Copyright = styled.small`
+  display: block;
+  margin-top: ${spacing[16]};
+  font-size: ${fontSize[0]};
+  text-align: right;
 `
 
 const Footer = ({ siteAuthor }) => (
