@@ -1,3 +1,5 @@
-// import '@fontsource/rubik'
+import "@fontsource/montserrat/900.css"
 import '@fontsource/montserrat'
-import '@fontsource/merriweather'
+
+// import '@fontsource/rubik'
+// import '@fontsource/merriweather'

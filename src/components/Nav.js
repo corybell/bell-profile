@@ -3,7 +3,7 @@ import { User, Briefcase, Feather, GitHub } from 'react-feather'
 import PropTypes from "prop-types"
 import styled from 'styled-components'
 import { GatsbyLink } from './Core'
-import { color, breakpoints, spacing, maxWidth, fontSize } from '../services/theme'
+import { color, breakpoints, spacing, maxWidth, fontSize, fontWeight } from '../services/theme'
 
 const Root = styled.nav`
   margin: 0 auto;
@@ -53,6 +53,7 @@ const Spacer = styled.li`
 
 const Title = styled.h2`
   margin: 0;
+  font-weight: ${fontWeight.medium};
 `
 
 const NavLink = styled(GatsbyLink)`

@@ -12,17 +12,20 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          author
         }
       }
     }
   `)
 
+  const { title, author } = data.site.siteMetadata
+
   return (
     <CssBaseline>
-      <Nav siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Nav siteTitle={title} />
       <Container>
         <main>{children}</main>
-        <Footer />
+        <Footer siteAuthor={author} />
       </Container>
     </CssBaseline>
   )

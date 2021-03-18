@@ -6,10 +6,10 @@
 // }
 
 export const breakpoints = {
-  phone: '850px',
+  phone: '767px',
   tablet: '1024px',
   laptop: '1200px',
-  large: '60em' // 960px
+  large: '960px'
 }
 
 export const maxWidth = {
