@@ -28,16 +28,14 @@ const TextContainer = styled.div`
 `
 
 const ResumeButton = styled.a`
-  width: 17rem;
-  height: 4rem;
+  width: max-content;
+  padding: 1rem;
+  text-align: center;
+  display: block;
   color: #000;
   font-size: ${fontSize[1]};
   font-weight: ${fontWeight.medium};
-  letter-spacing: 2px;
   border: 5px solid ${color.primary};
-  display: block;
-  padding-top: 1rem;
-  text-align: center;
   text-transform: uppercase;
   transition: background-color 300ms ease-in-out, border-color 400ms ease-in-out;
   &:hover {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { spacing, fontSize, color, fontWeight, breakpoints } from '../services/theme'
 import { GatsbyLink } from '../components/Core'
-// <a href="https://www.gatsbyjs.com">Gatsby</a>
 
 const FlexBox = styled.div`
   display: flex;
@@ -86,21 +85,18 @@ const TextContainer = styled.div`
 `
 
 const Hero = styled.h1`
-  font-size: ${fontSize[7]};
+  // font-size: ${fontSize[7]};
 `
 
 const ContactButton = styled(GatsbyLink)`
-  width: 12rem;
-  height: 4rem;
+  width: max-content;
+  padding: 1rem;
+  display: flex;
+  margin: 0 auto;
   color: #000;
   font-size: ${fontSize[1]};
   font-weight: ${fontWeight.medium};
-  letter-spacing: 2px;
   border: 5px solid ${color.primary};
-  display: block;
-  padding-top: 1rem;
-  margin: 0 auto;
-  text-align: center;
   text-transform: uppercase;
   transition: background-color 300ms ease-in-out, border-color 400ms ease-in-out;
   &:hover {
@@ -118,7 +114,7 @@ const Footer = ({ siteAuthor }) => (
         </TextContainer>
       </LeftContainer>
       <div>
-        <p><Hero>Like what you see? Let's get in touch.</Hero></p>
+        <p><Hero>Like what you see? Get in touch.</Hero></p>
         <ContactButton to="/contact">Contact me</ContactButton>
       </div>
     </FlexBox>
