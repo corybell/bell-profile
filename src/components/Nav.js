@@ -109,7 +109,7 @@ const Nav = ({ siteTitle }) => (
       </li> 
       <li>
         <NavLink to="/projects" activeClassName="active">
-          <GitHub /><span>Github</span>
+          <GitHub /><span>Projects</span>
         </NavLink>
       </li>  
       <li>

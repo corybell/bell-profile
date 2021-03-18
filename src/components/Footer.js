@@ -20,13 +20,14 @@ const projects = [
 ]
 
 const Root = styled.footer`
-  margin: ${spacing[32]} 0;
+  margin: 8rem 0 4rem 0;
 `
 
 const Copyright = styled.small`
   display: block;
-  margin-top: ${spacing[8]};
+  margin-top: ${spacing[16]};
   font-size: ${fontSize[0]};
+  text-align: right;
 `
 
 const LeftContainer = styled.div`
