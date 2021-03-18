@@ -30,8 +30,8 @@ const Copyright = styled.small`
 `
 
 const LeftContainer = styled.div`
-  width: 400px;
-  min-width: 400px;
+  width: 376px;
+  min-width: 376px;
   padding: 0;
   @media(max-width: ${breakpoints.phone}) {
     width: 100%;
@@ -84,6 +84,13 @@ const TextContainer = styled.div`
   }
 `
 
+const RightContainer = styled.div`
+  padding-left: ${spacing[16]};  
+  @media(max-width: ${breakpoints.phone}) {
+    padding-left: 0;
+  }
+`
+
 const Hero = styled.h1`
   // font-size: ${fontSize[7]};
 `
@@ -113,10 +120,10 @@ const Footer = ({ siteAuthor }) => (
           { projects.map(p => <ProjectLink href={p.url} target="_blank">{p.text}</ProjectLink> )}
         </TextContainer>
       </LeftContainer>
-      <div>
+      <RightContainer>
         <p><Hero>Like what you see? Get in touch.</Hero></p>
         <ContactButton to="/contact">Contact me</ContactButton>
-      </div>
+      </RightContainer>
     </FlexBox>
     <Copyright>
       © {new Date().getFullYear()} {siteAuthor}
