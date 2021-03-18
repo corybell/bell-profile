@@ -20,7 +20,8 @@ const projects = [
 ]
 
 const Root = styled.footer`
-  margin: 8rem 0 4rem 0;
+  margin: 8rem 0 2rem 0;
+  padding: 0;
 `
 
 const Copyright = styled.small`
@@ -113,10 +114,15 @@ const ContactButton = styled(GatsbyLink)`
   }
 `
 
+const SocialHeader = styled.h6`
+  margin-bottom: ${spacing[6]};
+`
+
 const Footer = ({ siteAuthor }) => (
   <Root>
     <FlexBox>
       <LeftContainer>
+        <SocialHeader>Find me here:</SocialHeader>
         <TextContainer>
           { projects.map(p => <ProjectLink href={p.url} target="_blank">{p.text}</ProjectLink> )}
         </TextContainer>
