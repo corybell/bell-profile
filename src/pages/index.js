@@ -67,7 +67,7 @@ const IndexPage = () => (
         /> */}
       </ImageContainer>
       <TextContainer>
-        <p><h1>{greeting}</h1></p>
+        <h1>{greeting}</h1>
         <p>{p1}</p>
         <p>{p2}</p>
         <ButtonContainer>

@@ -124,11 +124,11 @@ const Footer = ({ siteAuthor }) => (
       <LeftContainer>
         <SocialHeader>Find me here:</SocialHeader>
         <TextContainer>
-          { projects.map(p => <ProjectLink href={p.url} target="_blank">{p.text}</ProjectLink> )}
+          { projects.map(p => <ProjectLink key={p.url} href={p.url} target="_blank">{p.text}</ProjectLink> )}
         </TextContainer>
       </LeftContainer>
       <RightContainer>
-        <p><Hero>Like what you see? Get in touch.</Hero></p>
+        <Hero>Like what you see? Get in touch.</Hero>
         <ContactButton to="/contact">Contact me</ContactButton>
       </RightContainer>
     </FlexBox>

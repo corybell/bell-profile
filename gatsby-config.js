@@ -1,3 +1,28 @@
+
+const gqlQuery = `
+  query { 
+    viewer { 
+      repositories(last: 100, privacy: PUBLIC) {
+        nodes {
+          name
+          url
+          description
+          languages(last: 1, orderBy: { field: SIZE, direction:ASC } ) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          stargazers {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+`
+
 module.exports = {
   siteMetadata: {
     title: `Cory Bell`,
@@ -28,7 +53,18 @@ module.exports = {
         icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        // url: API URL to use. Defaults to  https://api.github.com/graphql
+        // url: someUrl,
+        // token: required by the GitHub API
+        token: '62054aa0a15e5403826e57db1a725bc9703cdef7',
+        // GraphQLquery: defaults to a search query
+        graphQLQuery: gqlQuery,
+      }
+    }
+    // `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
