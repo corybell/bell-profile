@@ -11,6 +11,7 @@ const gqlQuery = `
             edges {
               node {
                 name
+                color
               }
             }
           }

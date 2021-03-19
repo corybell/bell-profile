@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Layout from "../components/PageLayout"
 import SEO from "../components/Seo"
 import { graphql } from 'gatsby'
+import { color, breakpoints, fontSize } from '../services/theme'
 
 export const query = graphql`
   query {
@@ -20,6 +21,7 @@ export const query = graphql`
                     edges {
                       node {
                         name
+                        color
                       }
                     }
                   }
@@ -37,34 +39,78 @@ export const query = graphql`
 `
 
 const RepoGrid = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem 2rem;
+  @media(max-width: ${breakpoints.phone}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const RepoCard = styled.div`
-  width: 50%;
-  border: 1px solid gray;
-  margin: 1rem;
+  min-height: 120px;
+  width: 100%;
+  position: relative;
+  border: 2px solid ${color.primary};
   padding: 1rem;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.2);
+  }
 `
 
-const TextBlock = styled.div`
-  margin-top: 1rem;
+const RepoName = styled.a`
+  width: max-content;
+  margin: 0;
+  display: block;
+  h6 {
+    margin: 0;
+  }
+  &:hover {
+    h6 {
+      color: ${color.primary};
+    }
+  }
+`
+
+const RepoDescription = styled.span`
+  margin-top: 0.5rem;
+  font-size: ${fontSize[0]};
+  display: block;
+`
+
+const RepoLanguage = styled.div`
+  position: absolute;
+  bottom: 1rem;
+`
+
+const Circle = styled.span`
+  background-color: ${({ color }) => color};
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin-right: 0.5rem;
 `
 
 const ProjectsPage = ({ data }) => {
   const repos = data.allGithubData.edges[0].node.data.viewer.repositories.nodes
   
-  const renderRepo = (r) => (
-    <RepoCard key={r.name}>
-      <a href={r.url} target="_blank"><h6>{r.name}</h6></a>
-      <TextBlock>
-        <span>{r.description}</span>
-      </TextBlock>
-      <TextBlock>
-        <span>{r.languages.edges[0].node.name}</span>
-      </TextBlock>
-    </RepoCard>
-  )
+  const renderRepo = (r) => {
+    const language = r.languages.edges[0].node
+    return (
+      <RepoCard key={r.name}>
+        <RepoName href={r.url} target="_blank" rel="noreferrer">
+          <h6>{r.name}</h6>
+        </RepoName>
+        <RepoDescription>{r.description}</RepoDescription>
+        <RepoLanguage>
+          <Circle color={language.color} />
+          <span>{language.name}</span>
+        </RepoLanguage>
+      </RepoCard>
+    )
+  }
 
   return (
     <Layout>
