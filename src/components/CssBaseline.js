@@ -53,7 +53,7 @@ const st = `
   h6 {
     font-family: ${fontFamily.primary};
     // margin-top: ${spacing[12]};
-    // margin-bottom: ${spacing[6]};
+    margin-bottom: ${spacing[6]};
     line-height: ${lineHeight.tight};
     letter-spacing: -0.025em;
   }
