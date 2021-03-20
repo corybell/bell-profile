@@ -1,9 +1,27 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
-// import Bio from "../components/bio"
+import styled from 'styled-components'
 import Layout from "../components/PageLayout"
 import SEO from "../components/Seo"
+import { fontSize, fontFamily } from '../services/theme'
+
+const Article = styled.article`
+  header h1 {
+    margin: 0;
+  }
+  
+  header p {
+    font-size: ${fontSize[2]};
+  }
+`
+
+const NavList = styled.ul`
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+`
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -16,8 +34,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        className="blog-post"
+      <Article
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -33,17 +50,9 @@ const BlogPostTemplate = ({ data, location }) => {
         <footer>
           {/* <Bio /> */}
         </footer>
-      </article>
+      </Article>
       <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <NavList>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -58,7 +67,7 @@ const BlogPostTemplate = ({ data, location }) => {
               </Link>
             )}
           </li>
-        </ul>
+        </NavList>
       </nav>
     </Layout>
   )

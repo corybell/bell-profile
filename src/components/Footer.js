@@ -114,7 +114,6 @@ const SocialHeader = styled.h6`
 const Copyright = styled.small`
   display: block;
   margin-top: ${spacing[16]};
-  font-size: ${fontSize[0]};
   text-align: right;
 `
 

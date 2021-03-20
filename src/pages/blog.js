@@ -1,9 +1,29 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
-// import Bio from "../components/bio"
+import styled from 'styled-components'
 import Layout from "../components/PageLayout"
 import SEO from "../components/Seo"
+import { spacing, color, fontSize } from '../services/theme'
+
+const Article = styled.article`
+  margin-bottom: ${spacing[8]};
+  margin-top: ${spacing[8]};
+
+  p {
+    margin-bottom: ${spacing[0]};
+  }
+
+  h2 {
+    font-size: ${fontSize[4]};
+    color: ${color.primary};
+    margin-bottom: ${spacing[2]} ;
+    margin-top: ${spacing[0]};
+  }
+
+  header {
+    margin-bottom: ${spacing[4]};
+  }
+`
 
 const BlogPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -13,7 +33,6 @@ const BlogPage = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        {/* <Bio /> */}
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -26,15 +45,13 @@ const BlogPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      {/* <Bio /> */}
-      <ol style={{ listStyle: `none` }}>
+      <ol>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
             <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
+              <Article
                 itemScope
                 itemType="http://schema.org/Article"
               >
@@ -54,7 +71,7 @@ const BlogPage = ({ data, location }) => {
                     itemProp="description"
                   />
                 </section>
-              </article>
+              </Article>
             </li>
           )
         })}

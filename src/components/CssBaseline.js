@@ -52,7 +52,7 @@ const st = `
   h5,
   h6 {
     font-family: ${fontFamily.primary};
-    // margin-top: ${spacing[12]};
+    margin-top: ${spacing[12]};
     margin-bottom: ${spacing[6]};
     line-height: ${lineHeight.tight};
     letter-spacing: -0.025em;
@@ -125,6 +125,7 @@ const st = `
     margin-bottom: ${spacing[8]};
     list-style-position: outside;
     list-style-image: none;
+    list-style: none
   }
 
   ul li,
@@ -175,6 +176,10 @@ const st = `
 
   table thead tr th {
     border-bottom: 1px solid ${color.accent};
+  }
+
+  small {
+    font-size: ${fontSize[0]};
   }
 
   /* Link */
