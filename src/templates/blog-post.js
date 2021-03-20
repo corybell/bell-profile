@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import styled from 'styled-components'
 import Layout from "../components/PageLayout"
 import SEO from "../components/Seo"
-import { fontSize, fontFamily } from '../services/theme'
+import { fontSize } from '../services/theme'
 
 const Article = styled.article`
   header h1 {
