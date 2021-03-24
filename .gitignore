@@ -17,5 +17,4 @@ public
 .DS_Store
 
 # content
-#src/images/hero.png
-#src/images/favicon.svg
+src/images/
