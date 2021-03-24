@@ -19,3 +19,6 @@ public
 # content
 src/images/
 content/about/
+
+# static
+static/resume.pdf
