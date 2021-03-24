@@ -47,26 +47,19 @@ const RepoGrid = styled.div`
   }
 `
 
-const RepoCard = styled.div`
+const RepoCard = styled.a`
   min-height: 120px;
   width: 100%;
+  display: block;
   position: relative;
   border: 2px solid ${color.primary};
   padding: 1rem;
   transition: all 200ms ease-in-out;
-  &:hover {
-    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.2);
-  }
-`
-
-const RepoName = styled.a`
-  width: max-content;
-  margin: 0;
-  display: block;
   h6 {
     margin: 0;
   }
   &:hover {
+    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.2);
     h6 {
       color: ${color.primary};
     }
@@ -77,11 +70,13 @@ const RepoDescription = styled.span`
   margin-top: 0.5rem;
   font-size: ${fontSize[0]};
   display: block;
+  color: black;
 `
 
 const RepoLanguage = styled.div`
   position: absolute;
   bottom: 1rem;
+  color: black;
 `
 
 const Circle = styled.span`
@@ -99,10 +94,8 @@ const ProjectsPage = ({ data }) => {
   const renderRepo = (r) => {
     const language = r.languages.edges[0].node
     return (
-      <RepoCard key={r.name}>
-        <RepoName href={r.url} target="_blank" rel="noreferrer">
-          <h6>{r.name}</h6>
-        </RepoName>
+      <RepoCard key={r.name} href={r.url} target="_blank" rel="noreferrer">
+        <h6>{r.name}</h6>
         <RepoDescription>{r.description}</RepoDescription>
         <RepoLanguage>
           <Circle color={language.color} />
