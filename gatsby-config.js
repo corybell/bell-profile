@@ -1,4 +1,10 @@
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const { GITHUB_API_TOKEN } = process.env
+
 const gqlQuery = `
   query { 
     viewer { 
@@ -89,7 +95,7 @@ module.exports = {
         // url: API URL to use. Defaults to  https://api.github.com/graphql
         // url: someUrl,
         // token: required by the GitHub API
-        token: '62054aa0a15e5403826e57db1a725bc9703cdef7',
+        token: GITHUB_API_TOKEN,
         // GraphQLquery: defaults to a search query
         graphQLQuery: gqlQuery,
       }
