@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import styled from 'styled-components'
-import Layout from "../components/PageLayout"
-import SEO from "../components/Seo"
-import { spacing, color, fontSize } from '../services/theme'
+import Layout from "components/PageLayout"
+import SEO from "components/Seo"
+import { spacing, color, fontSize } from 'services/theme'
 
 const Article = styled.article`
   margin-bottom: ${spacing[8]};

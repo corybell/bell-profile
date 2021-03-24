@@ -1,7 +1,7 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
-import { spacing, fontSize, fontWeight, fontFamily, lineHeight, color } from '../services/theme'
+import { spacing, fontSize, fontWeight, fontFamily, lineHeight, color } from 'services/theme'
 
 const gatsbyStyles = `
   #___gatsby, 

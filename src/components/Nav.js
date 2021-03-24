@@ -2,8 +2,8 @@ import * as React from "react"
 import { User, Feather, GitHub } from 'react-feather'
 import PropTypes from "prop-types"
 import styled from 'styled-components'
-import { GatsbyLink } from './Core'
-import { color, breakpoints, spacing, maxWidth, fontSize, fontWeight } from '../services/theme'
+import { GatsbyLink } from 'components/Core'
+import { color, breakpoints, spacing, maxWidth, fontSize, fontWeight } from 'services/theme'
 
 const Root = styled.nav`
   margin: 0 auto;

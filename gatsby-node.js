@@ -1,11 +1,11 @@
-const path = require(`path`)
+const { resolve } = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPost = resolve(`./src/templates/blog-post.js`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -99,4 +99,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String
     }
   `)
+}
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [resolve(__dirname, "src"), "node_modules"],
+    },
+  })
 }

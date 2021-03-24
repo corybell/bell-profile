@@ -1,9 +1,9 @@
 import * as React from "react"
 import styled from 'styled-components'
-import Layout from "../components/PageLayout"
-import SEO from "../components/Seo"
+import Layout from "components/PageLayout"
+import SEO from "components/Seo"
 import { graphql } from 'gatsby'
-import { color, breakpoints, fontSize } from '../services/theme'
+import { color, breakpoints, fontSize } from 'services/theme'
 
 export const query = graphql`
   query {

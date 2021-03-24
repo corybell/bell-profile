@@ -2,9 +2,9 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import CssBaseline from './CssBaseline'
-import Nav from "./Nav"
-import Footer from './Footer'
-import { Container } from './Core'
+import Nav from "components/Nav"
+import Footer from 'components/Footer'
+import { Container } from 'components/Core'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

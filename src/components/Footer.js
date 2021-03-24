@@ -1,8 +1,8 @@
 import * as React from "react"
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { spacing, fontSize, color, fontWeight, breakpoints } from '../services/theme'
-import { GatsbyLink } from '../components/Core'
+import { spacing, fontSize, color, fontWeight, breakpoints } from 'services/theme'
+import { GatsbyLink } from 'components/Core'
 
 const projects = [
   { text: 'Github', url: 'https://github.com/corybell' },
