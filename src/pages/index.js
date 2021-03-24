@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from 'styled-components'
-// import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/PageLayout"
 import SEO from "../components/Seo"
 import { color, spacing, fontSize, breakpoints, fontWeight } from '../services/theme'
@@ -11,7 +11,6 @@ const ImageContainer = styled.div`
   min-height: 496px;
   width: 376px;
   min-width: 376px;
-  background-color: ${color.accent};
   @media(max-width: ${breakpoints.phone}) {
     display: none
   }
@@ -59,12 +58,11 @@ const IndexPage = () => (
     <SEO title="Home" />
     <FlexBox>
       <ImageContainer>
-        {/* <StaticImage
-          src="../images/hero.svg"
-          quality={100}
-          formats={["AUTO", "WEBP", "AVIF"]}
+        <StaticImage
+          src="../images/hero.png"
           alt="Hero"
-        /> */}
+          loading="eager"
+        />
       </ImageContainer>
       <TextContainer>
         <h1>{greeting}</h1>
