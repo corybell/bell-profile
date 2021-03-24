@@ -86,15 +86,13 @@ const RightContainer = styled.div`
   }
 `
 
-const Hero = styled.h1`
-  // font-size: ${fontSize[7]};
-`
-
 const ContactButton = styled(GatsbyLink)`
-  width: max-content;
+  width: 100%;
   padding: 1rem;
   display: flex;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   color: #000;
   font-size: ${fontSize[1]};
   font-weight: ${fontWeight.medium};
@@ -105,6 +103,11 @@ const ContactButton = styled(GatsbyLink)`
     color: white;
     background-color: ${color.primary};
   }
+`
+
+const ButtonContainer = styled.div`
+  margin: 0 auto;
+  width: 224px;
 `
 
 const SocialHeader = styled.h6`
@@ -127,8 +130,10 @@ const Footer = ({ siteAuthor }) => (
         </TextContainer>
       </LeftContainer>
       <RightContainer>
-        <Hero>Like what you see? Get in touch.</Hero>
-        <ContactButton to="/contact">Contact me</ContactButton>
+        <h1>Like what you see? Get in touch.</h1>
+        <ButtonContainer>
+          <ContactButton to="/contact">Contact me</ContactButton>
+        </ButtonContainer>
       </RightContainer>
     </FlexBox>
     <Copyright>

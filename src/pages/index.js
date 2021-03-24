@@ -56,6 +56,7 @@ const ResumeButton = styled.a`
 
 const ButtonContainer = styled.div`
   margin: 0 auto;
+  width: 224px;
 `
 
 const IndexPage = ({ data }) => (
