@@ -1,10 +1,21 @@
 import * as React from "react"
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/PageLayout"
 import SEO from "../components/Seo"
 import { color, spacing, fontSize, breakpoints, fontWeight } from '../services/theme'
 import { FlexBox } from '../components/Core'
+
+export const query = graphql`
+  query {
+    aboutJson {
+      greeting
+      p1
+      p2
+    }
+  }
+`
 
 const ImageContainer = styled.div`
   height: 496px;
@@ -47,13 +58,7 @@ const ButtonContainer = styled.div`
   margin: 0 auto;
 `
 
-const greeting = 'Hi people'
-
-const p1 = `I'm a full-stack developer located in St. Paul, Minnesota offering web development consulting and freelance services.`
-
-const p2 = `Check out my Github projects for code samples or download my resume for a full client list.`
-
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <FlexBox>
@@ -65,9 +70,9 @@ const IndexPage = () => (
         />
       </ImageContainer>
       <TextContainer>
-        <h1>{greeting}</h1>
-        <p>{p1}</p>
-        <p>{p2}</p>
+        <h1>{data.aboutJson.greeting}</h1>
+        <p>{data.aboutJson.p1}</p>
+        <p>{data.aboutJson.p2}</p>
         <ButtonContainer>
           <ResumeButton href="resume.pdf" target="_blank">Download resume</ResumeButton>
         </ButtonContainer>

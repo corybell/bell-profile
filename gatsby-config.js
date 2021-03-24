@@ -54,6 +54,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./content/about`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -76,6 +82,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
