@@ -1,5 +1,5 @@
 import * as React from "react"
-import { User, Briefcase, Feather, GitHub } from 'react-feather'
+import { User, Feather, GitHub } from 'react-feather'
 import PropTypes from "prop-types"
 import styled from 'styled-components'
 import { GatsbyLink } from './Core'
@@ -110,11 +110,6 @@ const Nav = ({ siteTitle }) => (
       <li>
         <NavLink to="/projects" activeClassName="active">
           <GitHub /><span>Projects</span>
-        </NavLink>
-      </li>  
-      <li>
-        <NavLink to="/portfolio" activeClassName="active">
-          <Briefcase /><span>Portfolio</span>
         </NavLink>
       </li>  
       <li>
