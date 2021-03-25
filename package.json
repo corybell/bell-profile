@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "Cory Bell <cory.bell@protonmail.com>",
   "dependencies": {
+    "@bellistic/gatsby-source-github-api": "^0.1.0",
     "@fontsource/montserrat": "^4.2.2",
     "gatsby": "^3.0.1",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
@@ -18,7 +19,6 @@
     "gatsby-remark-responsive-iframe": "^3.1.0",
     "gatsby-remark-smartypants": "^3.1.0",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-source-github-api": "^0.2.1",
     "gatsby-transformer-json": "^3.1.0",
     "gatsby-transformer-remark": "^3.1.0",
     "gatsby-transformer-sharp": "^3.0.0",
