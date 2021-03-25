@@ -6,6 +6,7 @@
   "dependencies": {
     "@bellistic/gatsby-source-github-api": "^0.1.0",
     "@fontsource/montserrat": "^4.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.1",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-image": "^1.0.0",
@@ -13,6 +14,7 @@
     "gatsby-plugin-offline": "^4.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-plugin-styled-components": "^4.1.0",
     "gatsby-remark-copy-linked-files": "^3.1.0",
     "gatsby-remark-images": "^4.1.0",
     "gatsby-remark-prismjs": "^4.1.0",
