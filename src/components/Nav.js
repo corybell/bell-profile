@@ -108,12 +108,12 @@ const Nav = ({ siteTitle }) => (
         </NavLink>
       </li> 
       <li>
-        <NavLink to="/projects" activeClassName="active">
+        <NavLink to="/projects/" activeClassName="active">
           <GitHub /><span>Projects</span>
         </NavLink>
       </li>  
       <li>
-        <NavLink to="/blog" activeClassName="active">
+        <NavLink to="/blog/" activeClassName="active">
           <Feather /><span>Blog</span>
         </NavLink>
       </li>
