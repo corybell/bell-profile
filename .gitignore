@@ -17,8 +17,8 @@ public
 .DS_Store
 
 # content
-src/images/
-content/about/
+#src/images/
+#content/about/
 
 # static
-static/resume.pdf
+#static/resume.pdf
