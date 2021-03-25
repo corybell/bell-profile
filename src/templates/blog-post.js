@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import styled from 'styled-components'
 import Layout from "components/PageLayout"
-import SEO from "components/Seo"
+import SEO from "components/Helmet"
 import { fontSize } from 'services/theme'
 
 const Article = styled.article`

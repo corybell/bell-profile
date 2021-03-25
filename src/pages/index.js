@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "components/PageLayout"
-import SEO from "components/Seo"
+import SEO from "components/Helmet"
 import { color, spacing, fontSize, breakpoints, fontWeight } from 'services/theme'
 import { FlexBox } from 'components/Core'
 

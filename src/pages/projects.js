@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from 'styled-components'
 import Layout from "components/PageLayout"
-import SEO from "components/Seo"
+import SEO from "components/Helmet"
 import { graphql } from 'gatsby'
 import { color, breakpoints, fontSize } from 'services/theme'
 
