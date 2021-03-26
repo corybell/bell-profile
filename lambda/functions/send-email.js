@@ -16,13 +16,13 @@ function getEmailHtml (body) {
     <html>
       <body>
         <h1>
-          Name: ${body.name}
+          ${body.name}
         </h1>
-        <h6>
-          Email: ${body.email}
-        </h6>
+        <h2>
+          ${body.email}
+        </h2>
         <p>
-          Message: ${body.message}
+          ${body.message}
         </p>
       </body>
     </html>

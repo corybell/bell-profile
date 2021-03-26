@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import Layout from 'components/PageLayout'
 import SEO from 'components/Helmet'
 import { spacing, color, fontSize, fontWeight } from 'services/theme'
+import { post } from '@bellistic/fetch-helper'
+
+const { GATSBY_FUNCTIONS_URL } = process.env
 
 const Label = styled.label`
   width: 100%;
@@ -58,7 +61,7 @@ const regex = /\b[\w.-]+@[\w.-]+\.\w{2,4}\b/
 const messages = {
   requiredField: 'This field is required',
   invalidEmail: 'Invalid email address',
-  emailFailed: `Hmm...That didn't work. Please verify your email address and try again.`,
+  emailFailed: `Hmm...that didn't work. Please verify your email address and try again.`,
 }
 
 const getEmailError = (type) => type === 'pattern' ? messages.invalidEmail : messages.requiredField
@@ -67,10 +70,11 @@ const ContactPage = () => {
   const { register, handleSubmit, errors } = useForm()
   const [sendError, setSendError] = useState(false)
 
-  const onSubmit = (data) => {
-    console.log(data)
+  const onSubmit = async (data) => {
+    const response = await post(`${GATSBY_FUNCTIONS_URL}/send-email`, data)
 
-    if (data.name !== 'Cory') {
+    if (!response.success) {
+      console.error(response.data)
       setSendError(true)
       return
     }
