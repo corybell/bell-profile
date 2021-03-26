@@ -36,7 +36,8 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "sparkpost": "^2.1.4"
   },
   "keywords": [
     "gatsby"
