@@ -132,7 +132,7 @@ const Footer = ({ siteAuthor }) => (
       <RightContainer>
         <h1>Like what you see? Get in touch.</h1>
         <ButtonContainer>
-          <ContactButton to="/contact">Contact me</ContactButton>
+          <ContactButton to="/contact/">Contact me</ContactButton>
         </ButtonContainer>
       </RightContainer>
     </FlexBox>
