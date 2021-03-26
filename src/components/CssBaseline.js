@@ -200,7 +200,6 @@ const st = `
     font-size: ${fontSize[1]};
     line-height: ${lineHeight.normal};
     font-family: ${fontFamily.primary};
-    margin-bottom: ${spacing[8]};
     padding: 0.5rem;
     background-color: #eaeaea;
     border: none;

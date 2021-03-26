@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import Layout from "components/PageLayout"
-import SEO from "components/Helmet"
+import Layout from 'components/PageLayout'
+import SEO from 'components/Helmet'
 import { spacing, color, fontSize, fontWeight } from 'services/theme'
 
 const Label = styled.label`
@@ -41,33 +42,63 @@ const SubmitButton = styled.input`
   }
 `
 
+const FormControl = styled.div`
+  margin-bottom: ${spacing[8]};
+`
+
+const FormError = styled.span`
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: red;
+`
+
+const regex = /\b[\w.-]+@[\w.-]+\.\w{2,4}\b/
+
 const ContactPage = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  
-  const submit = (e) => {
-    const payload = {
-      name,
-      email,
-      message,
+  const { register, handleSubmit, errors } = useForm()
+  const [emailSent, setEmailSent] = useState(false)
+  const [sendError, setSendError] = useState(false)
+
+  const onSubmit = (data) => {
+    console.log(data)
+
+    setEmailSent(true)
+
+    if (data.name !== 'Cory') {
+      setSendError(true)
+    } else {
+      setSendError(false)
     }
-    console.log(payload)
-    e.preventDefault()
   }
   
+  console.log(errors)
+
   return (
     <Layout showFooter={false}>
       <SEO title="Contact" />
-      <form onSubmit={submit}>
-        <Label>Name</Label>
-        <TextBox type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        <Label>Email</Label>
-        <TextBox type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <Label>Message</Label>
-        <TextArea type="text" value={message} onChange={(e) => setMessage(e.target.value)} />
-        <SubmitButton type="submit" value="Send" />
-      </form>
+      { (!emailSent || sendError) &&
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <FormControl>
+            <Label>Name</Label>
+            <TextBox type="text" name="name" ref={register({ required: true })} />
+            {errors.name && <FormError>This field is required</FormError>}
+          </FormControl>
+          <FormControl>
+            <Label>Email</Label>
+            <TextBox type="text" name="email" ref={register({ required: true, pattern: regex })} />
+            {errors.email && errors.email.type === 'required' && <FormError>This field is required</FormError>}
+            {errors.email && errors.email.type === 'pattern' && <FormError>Invalid email address</FormError>}
+          </FormControl>
+          <FormControl>
+            <Label>Message</Label>
+            <TextArea type="text" name="message" ref={register({ required: true })} />
+            {errors.message && <FormError>This field is required</FormError>}
+          </FormControl>
+          <SubmitButton type="submit" value="Send" />
+        </form>
+      }
+      { emailSent && sendError && <FormError>{`Hmm...That didn't work. Please verify your email address and try again.`}</FormError> }
+      { emailSent && !sendError && <h6>{`Thanks for getting in touch!  I'll respond within a few days.`}</h6> }
     </Layout>
   )
 }
