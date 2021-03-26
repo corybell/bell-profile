@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import Layout from 'components/PageLayout'
 import SEO from 'components/Helmet'
@@ -46,7 +47,7 @@ const FormControl = styled.div`
   margin-bottom: ${spacing[8]};
 `
 
-const FormError = styled.span`
+const ErrorMessage = styled.span`
   display: inline-block;
   margin-top: 0.5rem;
   color: red;
@@ -54,51 +55,51 @@ const FormError = styled.span`
 
 const regex = /\b[\w.-]+@[\w.-]+\.\w{2,4}\b/
 
+const messages = {
+  requiredField: 'This field is required',
+  invalidEmail: 'Invalid email address',
+  emailFailed: `Hmm...That didn't work. Please verify your email address and try again.`,
+}
+
+const getEmailError = (type) => type === 'pattern' ? messages.invalidEmail : messages.requiredField
+
 const ContactPage = () => {
   const { register, handleSubmit, errors } = useForm()
-  const [emailSent, setEmailSent] = useState(false)
   const [sendError, setSendError] = useState(false)
 
   const onSubmit = (data) => {
     console.log(data)
 
-    setEmailSent(true)
-
     if (data.name !== 'Cory') {
       setSendError(true)
-    } else {
-      setSendError(false)
+      return
     }
+
+    navigate('/contact/success/')
   }
-  
-  console.log(errors)
 
   return (
     <Layout showFooter={false}>
       <SEO title="Contact" />
-      { (!emailSent || sendError) &&
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl>
             <Label>Name</Label>
             <TextBox type="text" name="name" ref={register({ required: true })} />
-            {errors.name && <FormError>This field is required</FormError>}
+            {errors.name && <ErrorMessage>{messages.requiredField}</ErrorMessage>}
           </FormControl>
           <FormControl>
             <Label>Email</Label>
             <TextBox type="text" name="email" ref={register({ required: true, pattern: regex })} />
-            {errors.email && errors.email.type === 'required' && <FormError>This field is required</FormError>}
-            {errors.email && errors.email.type === 'pattern' && <FormError>Invalid email address</FormError>}
+            {errors.email && <ErrorMessage>{getEmailError(errors.email.type)}</ErrorMessage>}
           </FormControl>
           <FormControl>
             <Label>Message</Label>
             <TextArea type="text" name="message" ref={register({ required: true })} />
-            {errors.message && <FormError>This field is required</FormError>}
+            {errors.message && <ErrorMessage>{messages.requiredField}</ErrorMessage>}
           </FormControl>
           <SubmitButton type="submit" value="Send" />
         </form>
-      }
-      { emailSent && sendError && <FormError>{`Hmm...That didn't work. Please verify your email address and try again.`}</FormError> }
-      { emailSent && !sendError && <h6>{`Thanks for getting in touch!  I'll respond within a few days.`}</h6> }
+        { sendError && <ErrorMessage>{messages.emailFailed}</ErrorMessage> }
     </Layout>
   )
 }

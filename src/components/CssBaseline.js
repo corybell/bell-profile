@@ -195,6 +195,12 @@ const st = `
     text-decoration: none;
   }
 
+  /* Form */
+
+  form {
+    margin-bottom: ${spacing[4]};
+  }
+
   input,
   textarea {
     font-size: ${fontSize[1]};
