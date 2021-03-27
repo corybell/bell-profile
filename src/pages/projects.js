@@ -1,8 +1,8 @@
-import * as React from "react"
-import styled from 'styled-components'
-import Layout from "components/PageLayout"
-import SEO from "components/Helmet"
+import * as React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
+import Layout from 'components/PageLayout'
+import SEO from 'components/Helmet'
 import { color, breakpoints, fontSize } from 'services/theme'
 
 export const query = graphql`
@@ -79,13 +79,13 @@ const RepoDescription = styled.span`
   margin-top: 0.5rem;
   font-size: ${fontSize[0]};
   display: block;
-  color: black;
+  color: #000;
 `
 
 const RepoLanguage = styled.div`
   position: absolute;
   bottom: 1rem;
-  color: black;
+  color: #000;
 `
 
 const Circle = styled.span`

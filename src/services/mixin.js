@@ -53,10 +53,16 @@ export const primaryButton = `
 
   border: 5px solid ${color.primary};
   color: #000;
-  
+  background-color: #fff;
+
   transition: background-color 300ms ease-in-out, border-color 400ms ease-in-out;
   &:hover {
     color: #fff;
     background-color: ${color.primary};
+    cursor: pointer;
   }
+`
+
+export const buttonWidth = `
+  width: 224px;
 `

@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
+import styled from 'styled-components'
 import Layout from 'components/PageLayout'
 import SEO from 'components/Helmet'
+import { ButtonContainer } from 'components/Styled'
 import { spacing, breakpoints } from 'services/theme'
 import { flexColumnCenter, primaryButton, flexFullWidth } from 'services/mixin'
-import { ButtonContainer } from 'components/Styled'
 
 export const query = graphql`
   query {

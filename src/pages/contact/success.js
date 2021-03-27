@@ -1,6 +1,6 @@
-import * as React from "react"
-import Layout from "components/PageLayout"
-import SEO from "components/Helmet"
+import * as React from 'react'
+import Layout from 'components/PageLayout'
+import SEO from 'components/Helmet'
 
 const ContactSuccessPage = () => (
   <Layout showFooter={false}>

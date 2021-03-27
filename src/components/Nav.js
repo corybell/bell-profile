@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-import { User, Feather, GitHub } from 'react-feather'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { User, Feather, GitHub } from 'react-feather'
 import { color, breakpoints, spacing, maxWidth, fontSize, fontWeight } from 'services/theme'
 import { linkAnimation } from 'services/mixin'
 
