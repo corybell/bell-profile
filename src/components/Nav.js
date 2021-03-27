@@ -1,9 +1,10 @@
-import * as React from "react"
+import * as React from 'react'
+import { Link } from 'gatsby'
 import { User, Feather, GitHub } from 'react-feather'
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { GatsbyLink } from 'components/Core'
 import { color, breakpoints, spacing, maxWidth, fontSize, fontWeight } from 'services/theme'
+import { linkAnimation } from 'services/mixin'
 
 const Root = styled.nav`
   margin: 0 auto;
@@ -14,9 +15,9 @@ const Root = styled.nav`
 const NavList = styled.ul`
   width: 100%;
   padding: 0;
+  margin: ${spacing[4]} 0 0 0;
   display: flex;
   align-items: center;
-  margin: ${spacing[4]} 0 0 0;
   @media(max-width: ${breakpoints.phone}) {
     justify-content: space-between;
   }
@@ -44,6 +45,11 @@ const TitleListItem = styled.li`
   }
 `
 
+const Title = styled.h2`
+  margin: 0;
+  font-weight: ${fontWeight.medium};
+`
+
 const Spacer = styled.li`
   flex-grow: 1;
   @media(max-width: ${breakpoints.phone}) {
@@ -51,55 +57,26 @@ const Spacer = styled.li`
   }
 `
 
-const Title = styled.h2`
-  margin: 0;
-  font-weight: ${fontWeight.medium};
-`
-
-const NavLink = styled(GatsbyLink)`
+const NavLink = styled(Link)`
   display: inline-block;
   position: relative;
   color: ${color.accent};
   padding-bottom: ${spacing[3]};
   margin-left: ${spacing[8]};
-  transition: all .2s ease-out;
-  will-change: transform, color;
   @media(max-width: ${breakpoints.phone}) {
     margin: 0;
   }
-  &:after {
-    z-index: 1;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    content: "";
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: ${color.primary};
-    transform: scale(0, 1);
-    transform-origin: 100% 50%;
-    will-change: transform;
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), 
-    -webkit-transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-  &:hover:after,
-  &.active:after {
-    background-color: ${color.primary};
-    transform: scale(1);
-    transform-origin: 0 50%;
-    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s ease-out, 
-    -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
-  }
+  
+  ${linkAnimation}
 `
 
 const Nav = ({ siteTitle }) => (
   <Root>
     <NavList>
       <TitleListItem>
-        <GatsbyLink to="/">
+        <Link to="/">
           <Title>{siteTitle}</Title>
-        </GatsbyLink>
+        </Link>
       </TitleListItem>
       <Spacer />
       <li>
@@ -126,7 +103,7 @@ Nav.propTypes = {
 }
 
 Nav.defaultProps = {
-  siteTitle: ``,
+  siteTitle: '',
 }
 
 export default Nav
