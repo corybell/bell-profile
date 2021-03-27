@@ -205,7 +205,7 @@ const siteStyles = `
     line-height: ${lineHeight.normal};
     font-family: ${fontFamily.primary};
     padding: 0.5rem;
-    background-color: #eaeaea;
+    background-color: #f5f2f0;
     border: none;
   }
   
