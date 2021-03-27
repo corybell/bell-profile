@@ -73,6 +73,7 @@ const ContactPage = () => {
   return (
     <Layout showFooter={false}>
       <SEO title="Contact" />
+        <h1>Contact Me</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl>
             <Label>Name</Label>
