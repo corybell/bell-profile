@@ -48,21 +48,30 @@ const RepoGrid = styled.div`
 `
 
 const RepoCard = styled.a`
-  min-height: 120px;
+  height: 122px;
   width: 100%;
-  display: block;
   position: relative;
-  border: 2px solid ${color.primary};
+  display: block;
+  border: 4px solid ${color.primary};
+  background: #fff;
   padding: 1rem;
-  transition: all 200ms ease-in-out;
   h6 {
     margin: 0;
   }
-  &:hover {
-    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.2);
-    h6 {
-      color: ${color.primary};
-    }
+  &::after {
+    height:118px;
+    width: 100%;
+    position: absolute;
+    background-color: ${color.primary};
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    content: '';
+    transition: all 0.5s;
+  }
+  &:hover:after {
+    top: 10px;
+    left: 14px;
   }
 `
 
