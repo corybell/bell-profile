@@ -1,34 +1,13 @@
-// :root {
-//   --primary-color: #34414D;
-//   --accent-color: #06BA8C;  // green
-//   --default-color: #ffffff;
-//   --other-color: #2A353F;
-// }
 
 export const breakpoints = {
   phone: '767px',
   tablet: '1024px',
   laptop: '1200px',
-  large: '960px'
 }
 
 export const maxWidth = {
-  container: '60rem' // 960px
+  container: '960px'
 }
-
-// export const maxWidth = {
-//   none: 'none',
-//   xs: '20rem',
-//   sm: '24rem',
-//   md: '28rem',
-//   lg: '32rem',
-//   xl: '36rem',
-//   xl2: '42rem',
-//   xl3: '48rem',
-//   xl4: '56rem',
-//   full: '100%',
-//   wrapper: '42rem',
-// }
 
 export const spacing = {
   px: '1px',
@@ -73,7 +52,6 @@ export const lineHeight = {
 }
 
 export const fontSize = {
-  root: '16px',
   0: '0.833rem',
   1: '1rem',
   2: '1.2rem',
@@ -92,4 +70,3 @@ export const color = {
   headingBlack: 'black',
   accent: '#34414D',
 }
-

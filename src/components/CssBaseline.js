@@ -3,15 +3,13 @@ import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 import { spacing, fontSize, fontWeight, fontFamily, lineHeight, color } from 'services/theme'
 
-const gatsbyStyles = `
+const siteStyles = `
   #___gatsby, 
   #gatsby-focus-wrapper {
     height: 100%;
     width: 100%;
   }
-`
 
-const st = `
   /* HTML elements */
 
   *,
@@ -22,7 +20,7 @@ const st = `
 
   html {
     line-height: ${lineHeight.normal};
-    font-size: ${fontSize.root};
+    font-size: ${fontSize[1]};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -219,8 +217,7 @@ const st = `
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  ${st}
-  ${gatsbyStyles}
+  ${siteStyles}
 `
 
 export default function CssBaseline ({ children }) {
