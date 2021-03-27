@@ -73,6 +73,9 @@ const Motto = styled.small`
   margin-top: ${spacing[16]};
   text-align: right;
   font-style: italic;
+  @media(max-width: ${breakpoints.phone}) {
+    text-align: center;
+  }
 `
 
 const Copyright = styled.small`
