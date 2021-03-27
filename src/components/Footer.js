@@ -68,9 +68,16 @@ const ContactButton = styled(Link)`
   ${primaryButton}
 `
 
-const Copyright = styled.small`
+const Motto = styled.small`
   display: block;
   margin-top: ${spacing[16]};
+  text-align: right;
+  font-style: italic;
+`
+
+const Copyright = styled.small`
+  display: block;
+  margin-top: ${spacing[4]};
   text-align: right;
 `
 
@@ -90,6 +97,9 @@ const Footer = ({ siteAuthor }) => (
         </ButtonContainer>
       </RightContainer>
     </FlexBox>
+    <Motto>
+      {`Any organization will produce a design whose structure mirrors the organization's communication structure.`}
+    </Motto>
     <Copyright>
       © {new Date().getFullYear()} {siteAuthor}
     </Copyright>
