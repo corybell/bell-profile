@@ -54,6 +54,9 @@ const ProjectLink = styled.a`
 
 const ProjectsHeader = styled.h6`
   margin-bottom: ${spacing[6]};
+  @media(max-width: ${breakpoints.phone}) {
+    text-align: center;
+  }
 `
 
 const ProjectsContainer = styled.div`
@@ -71,17 +74,14 @@ const ContactButton = styled(Link)`
 const Motto = styled.small`
   display: block;
   margin-top: ${spacing[16]};
-  text-align: right;
+  text-align: center;
   font-style: italic;
-  @media(max-width: ${breakpoints.phone}) {
-    text-align: center;
-  }
 `
 
 const Copyright = styled.small`
   display: block;
   margin-top: ${spacing[4]};
-  text-align: right;
+  text-align: center;
 `
 
 const Footer = ({ siteAuthor }) => (
