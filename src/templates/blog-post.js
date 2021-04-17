@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from 'components/PageLayout'
-import SEO from 'components/Helmet'
+import Helmet from 'components/Helmet'
 import { fontSize } from 'services/theme'
 
 export const pageQuery = graphql`
@@ -70,7 +70,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Helmet
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />

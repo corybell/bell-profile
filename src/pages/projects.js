@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from 'components/PageLayout'
-import SEO from 'components/Helmet'
+import Helmet from 'components/Helmet'
 import { color, breakpoints, fontSize } from 'services/theme'
 
 export const query = graphql`
@@ -116,7 +116,7 @@ const ProjectsPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Projects" />
+      <Helmet title="Projects" />
       <h1>Github Repositories</h1>
       <RepoGrid>
         { repos.map(r => renderRepo(r)) }

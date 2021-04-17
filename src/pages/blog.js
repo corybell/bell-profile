@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from 'components/PageLayout'
-import SEO from 'components/Helmet'
+import Helmet from 'components/Helmet'
 import { spacing, color, fontSize } from 'services/theme'
 
 const Article = styled.article`
@@ -32,7 +32,7 @@ const BlogPage = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <Helmet title="All posts" />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -44,7 +44,7 @@ const BlogPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <Helmet title="All posts" />
       <ol>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug

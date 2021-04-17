@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import Layout from 'components/PageLayout'
-import SEO from 'components/Helmet'
+import Helmet from 'components/Helmet'
 import { ButtonContainer } from 'components/Styled'
 import { spacing, breakpoints } from 'services/theme'
 import { flexColumnCenter, primaryButton, flexFullWidth } from 'services/mixin'
@@ -46,7 +46,7 @@ const ResumeButton = styled.a`
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <Helmet title="Home" />
     <FlexBox>
       <HeroContainer>
         <StaticImage

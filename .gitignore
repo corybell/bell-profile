@@ -16,9 +16,4 @@ public
 # Mac files
 .DS_Store
 
-# content
-#src/images/
-#content/about/
-
-# static
-#static/resume.pdf
+package-lock.json

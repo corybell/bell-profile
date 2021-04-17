@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { post } from '@bellistic/fetch-helper'
 import Layout from 'components/PageLayout'
-import SEO from 'components/Helmet'
+import Helmet from 'components/Helmet'
 import { spacing } from 'services/theme'
 import { primaryButton, buttonWidth } from 'services/mixin'
 
@@ -72,7 +72,7 @@ const ContactPage = () => {
 
   return (
     <Layout showFooter={false}>
-      <SEO title="Contact" />
+      <Helmet title="Contact" />
         <h1>Contact Me</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl>
