@@ -98,7 +98,7 @@ module.exports = {
       },
     },
     {
-      resolve: `@bellistic/gatsby-source-github-api`,
+      resolve: `gatsby-source-github-api`,
       options: {
         // url: API URL to use. Defaults to  https://api.github.com/graphql
         // url: someUrl,
